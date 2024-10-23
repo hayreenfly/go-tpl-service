@@ -1,0 +1,63 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a Golang Template Service example with Gin and Swagger",
+        "title": "Go Template Service API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "paths": {
+        "/example": {
+            "get": {
+                "description": "Returns an example message",
+                "tags": [
+                    "Example"
+                ],
+                "summary": "Example page",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.JsonResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/health": {
+            "get": {
+                "description": "Returns the health status of the service",
+                "tags": [
+                    "Health"
+                ],
+                "summary": "Health check endpoint",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.JsonResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.JsonResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "description": "Use `interface{}` for any type of data"
+                },
+                "error": {
+                    "type": "boolean"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

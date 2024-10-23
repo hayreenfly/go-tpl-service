@@ -1,0 +1,11 @@
+app:
+  name: "go-tpl-service"
+  port: 80
+  environment: "development"
+
+database:
+  host: "postgres"
+  port: 5432
+  username: "postgres"
+  password: "password"
+  name: "users"

@@ -1,0 +1,67 @@
+# Go binaries
+/bin/
+/out/
+/build/      # Build output directory
+goTplService
+
+# Ignore binary files
+*.exe         # Windows executables
+*.dll         # Windows DLL files
+*.so          # Shared libraries (Linux)
+*.dylib       # Dynamic libraries (macOS)
+*.o           # Object files
+*.a           # Static libraries
+*.bin         # Generic binary files
+*.out         # Output files from builds
+/bin/         # Ignore binaries in the bin directory
+/build/       # Ignore build artifacts
+**/*.exe
+**/*.out
+**/*.a
+**/*.o
+**/*.so
+**/*.dylib
+
+# Dependency directories
+vendor/
+Godeps/
+*.lock
+
+# Build artifacts
+*.test
+*.prof
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+*~
+.DS_Store
+
+# Go workspace file
+go.work
+go.sum
+
+# Coverage files
+*.cov
+*.out
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Cache files
+.cache/
+
+
+# Docker database data
+/db-data/
+/docker-compose.override.yml
+
+# Config
+config.yaml
+

@@ -1,0 +1,41 @@
+basePath: /
+definitions:
+  models.JsonResponse:
+    properties:
+      data:
+        description: Use `interface{}` for any type of data
+      error:
+        type: boolean
+      message:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a Golang Template Service example with Gin and Swagger
+  title: Go Template Service API
+  version: "1.0"
+paths:
+  /example:
+    get:
+      description: Returns an example message
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.JsonResponse'
+      summary: Example page
+      tags:
+      - Example
+  /health:
+    get:
+      description: Returns the health status of the service
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.JsonResponse'
+      summary: Health check endpoint
+      tags:
+      - Health
+swagger: "2.0"
