@@ -7,6 +7,7 @@ This is a basic template for a Go microservice that demonstrates a simple API wi
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Database Migration](#database-migration)
 - [Swagger Documentation](#swagger-documentation)
 
 ## Requirements
@@ -46,6 +47,34 @@ This is a basic template for a Go microservice that demonstrates a simple API wi
    ```bash
    go run cmd/api/main.go
    ```
+
+## Database Migration
+
+### Running Migrations
+
+Create a new migration
+
+Create a new migration with the following command:
+
+```bash
+make create-migration
+```
+
+**Apply migrations**
+
+To apply the migrations, use:
+
+```bash
+make migration-up
+```
+
+**Rollback migrations**
+
+To rollback the migrations, use:
+
+```bash
+make migration-down
+```
 
 ## Swagger Documentation
 

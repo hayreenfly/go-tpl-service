@@ -3,6 +3,9 @@ SHELL=cmd.exe
 BINARY = goTplService
 DOCKER_IMAGE = go-tpl-service-image
 
+# Variables
+CONFIG_FILE = ./internal/config/config.yaml
+
 # Build the microservice binary for Linux
 build:
 	@echo Building binary...
@@ -45,3 +48,37 @@ down:
 logs:
 	@echo Viewing logs for Docker containers...
 	@docker-compose logs -f
+
+
+# Migration command
+# Variables
+MIGRATE = migrate
+CONFIG = ./internal/config/config.yaml
+
+# Extract configuration values using yq
+USERNAME = $(shell yq eval '.database.username' "$(CONFIG)")
+PASSWORD = $(shell yq eval '.database.password' "$(CONFIG)")
+HOST = $(shell yq eval '.database.host' "$(CONFIG)")
+PORT = $(shell yq eval '.database.port' "$(CONFIG)")
+DBNAME = $(shell yq eval '.database.name' "$(CONFIG)")
+DB_URL = "postgres://$(USERNAME):$(PASSWORD)@$(HOST):$(PORT)/$(DBNAME)?sslmode=disable"
+
+# Create a new migration
+create-migration:
+	@bash ./database/create_migration.sh
+
+# Migrate Up
+migrate-up:
+	$(MIGRATE) -path ./database/migrations -database $(DB_URL) up
+
+# Migrate Down (Rollback)
+migrate-down:
+	$(MIGRATE) -path ./database/migrations -database $(DB_URL) down 1
+
+# Help
+help:
+	@echo "Usage:"
+	@echo "  make create-migration    Create a new migration"
+	@echo "  make migrate-up          Run database migrations"
+	@echo "  make migrate-down        Rollback database migrations"
+	@echo "  make help                Show this help message"
