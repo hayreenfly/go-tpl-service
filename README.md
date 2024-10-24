@@ -21,7 +21,7 @@ This is a basic template for a Go microservice that demonstrates a simple API wi
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/hayreenfly/go-tpl-template.git new-repo-name
+   git clone https://github.com/hayreenfly/go-tpl-service.git new-repo-name
    cd new-repo-name
    ```
 
