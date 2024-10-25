@@ -1,9 +1,8 @@
-basePath: /
+basePath: /api
 definitions:
-  models.JsonResponse:
+  main.jsonResponse:
     properties:
-      data:
-        description: Use `interface{}` for any type of data
+      data: {}
       error:
         type: boolean
       message:
@@ -12,7 +11,7 @@ definitions:
 host: localhost:8080
 info:
   contact: {}
-  description: This is a Golang Template Service example with Gin and Swagger
+  description: This is a Go Template Service
   title: Go Template Service API
   version: "1.0"
 paths:
@@ -23,7 +22,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/models.JsonResponse'
+            $ref: '#/definitions/main.jsonResponse'
       summary: Example page
       tags:
       - Example
@@ -34,7 +33,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/models.JsonResponse'
+            $ref: '#/definitions/main.jsonResponse'
       summary: Health check endpoint
       tags:
       - Health

@@ -45,7 +45,7 @@ This is a basic template for a Go microservice that demonstrates a simple API wi
    Run the following command to start the service:
 
    ```bash
-   go run cmd/api/main.go
+   go run cmd/api
    ```
 
 ## Database Migration

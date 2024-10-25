@@ -26,7 +26,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/models.JsonResponse"
+                            "$ref": "#/definitions/main.jsonResponse"
                         }
                     }
                 }
@@ -43,7 +43,7 @@ const docTemplate = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/models.JsonResponse"
+                            "$ref": "#/definitions/main.jsonResponse"
                         }
                     }
                 }
@@ -51,12 +51,10 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "models.JsonResponse": {
+        "main.jsonResponse": {
             "type": "object",
             "properties": {
-                "data": {
-                    "description": "Use ` + "`" + `interface{}` + "`" + ` for any type of data"
-                },
+                "data": {},
                 "error": {
                     "type": "boolean"
                 },
@@ -72,10 +70,10 @@ const docTemplate = `{
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
 	Host:             "localhost:8080",
-	BasePath:         "/",
+	BasePath:         "/api",
 	Schemes:          []string{},
 	Title:            "Go Template Service API",
-	Description:      "This is a Golang Template Service example with Gin and Swagger",
+	Description:      "This is a Go Template Service",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",

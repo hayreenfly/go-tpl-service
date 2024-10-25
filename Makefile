@@ -65,15 +65,15 @@ DB_URL = "postgres://$(USERNAME):$(PASSWORD)@$(HOST):$(PORT)/$(DBNAME)?sslmode=d
 
 # Create a new migration
 create-migration:
-	@bash ./database/create_migration.sh
+	@bash ./db/create_migration.sh
 
 # Migrate Up
 migrate-up:
-	$(MIGRATE) -path ./database/migrations -database $(DB_URL) up
+	$(MIGRATE) -path ./db/migrations -database $(DB_URL) up
 
 # Migrate Down (Rollback)
 migrate-down:
-	$(MIGRATE) -path ./database/migrations -database $(DB_URL) down 1
+	$(MIGRATE) -path ./db/migrations -database $(DB_URL) down 1
 
 # Help
 help:

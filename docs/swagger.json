@@ -1,13 +1,13 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is a Golang Template Service example with Gin and Swagger",
+        "description": "This is a Go Template Service",
         "title": "Go Template Service API",
         "contact": {},
         "version": "1.0"
     },
     "host": "localhost:8080",
-    "basePath": "/",
+    "basePath": "/api",
     "paths": {
         "/example": {
             "get": {
@@ -20,7 +20,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/models.JsonResponse"
+                            "$ref": "#/definitions/main.jsonResponse"
                         }
                     }
                 }
@@ -37,7 +37,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/models.JsonResponse"
+                            "$ref": "#/definitions/main.jsonResponse"
                         }
                     }
                 }
@@ -45,12 +45,10 @@
         }
     },
     "definitions": {
-        "models.JsonResponse": {
+        "main.jsonResponse": {
             "type": "object",
             "properties": {
-                "data": {
-                    "description": "Use `interface{}` for any type of data"
-                },
+                "data": {},
                 "error": {
                     "type": "boolean"
                 },

@@ -11,4 +11,4 @@ if [ -z "$MIGRATION_NAME" ]; then
 fi
 
 # Run the migrate command
-migrate create -ext sql -dir ./database/migrations "$MIGRATION_NAME"
+migrate create -ext sql -dir ./db/migrations "$MIGRATION_NAME"
